@@ -1,0 +1,116 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Netrex - Page 1</title>
+<style>
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: Arial, sans-serif; background:#f0f0f0; color:#111; transition: background 0.5s, color 0.5s; }
+a { text-decoration:none; color:inherit; }
+
+/* Dark mode toggle */
+#dark-toggle { display:none; }
+body.dark { background:#121212; color:#fff; }
+.dark-toggle-label { position:fixed; top:20px; right:20px; background:#111; color:#fff; padding:8px 12px; cursor:pointer; border-radius:5px; z-index:1001; transition: background 0.3s, color 0.3s; }
+body.dark .dark-toggle-label { background:#eee; color:#111; }
+
+/* Sidebar */
+#sidebar-toggle { display:none; }
+.sidebar {
+  position:fixed; top:0; right:-300px; width:300px; height:100%; background:#222; color:#fff; padding:40px 20px; overflow-y:auto;
+  transition: transform 0.5s ease-in-out, background 0.5s;
+}
+#sidebar-toggle:checked + .sidebar { transform: translateX(-300px); }
+.sidebar h2 { margin-bottom:20px; font-size:1.5em; text-align:center; }
+.sidebar a { display:block; margin:10px 0; color:#fff; padding:6px 10px; border-radius:4px; transition: background 0.3s; }
+.sidebar a:hover { background:#444; }
+.sidebar-toggle-label {
+  position:fixed; top:60px; right:20px; background:#222; color:#fff; padding:8px 12px; cursor:pointer; border-radius:5px; z-index:1001;
+  transition: background 0.3s;
+}
+body.dark .sidebar { background:#333; }
+body.dark .sidebar-toggle-label { background:#333; color:#fff; }
+
+/* Banner */
+header { text-align:center; padding:60px 20px 40px; }
+header img { max-width:300px; width:80%; height:auto; }
+
+/* Main content */
+.main {
+  max-width:900px; margin:0 auto; padding:20px; text-align:center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+.main h1 { margin-bottom:20px; font-size:2em; }
+.main p { margin-bottom:30px; font-size:1.1em; }
+
+/* Navigation buttons */
+.nav-buttons { display:flex; justify-content:space-between; max-width:400px; margin:0 auto; }
+.nav-buttons a { background:#111; color:#fff; padding:10px 20px; border-radius:5px; transition: all 0.3s; }
+.nav-buttons a:hover { background:#555; transform:scale(1.05); }
+body.dark .nav-buttons a { background:#eee; color:#111; }
+body.dark .nav-buttons a:hover { background:#aaa; }
+
+/* Page transition animation */
+@keyframes fadeIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+/* Sidebar smooth slide */
+.sidebar { transform:translateX(0); }
+#sidebar-toggle:checked + .sidebar { transform:translateX(-300px); }
+
+/* Responsive */
+@media(max-width:600px){
+  .sidebar { width:240px; padding:30px 15px; }
+  #sidebar-toggle:checked + .sidebar { transform: translateX(-240px); }
+  header img { max-width:200px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Dark Mode Toggle -->
+<input type="checkbox" id="dark-toggle">
+<label for="dark-toggle" class="dark-toggle-label">Dark Mode</label>
+
+<!-- Sidebar Toggle -->
+<input type="checkbox" id="sidebar-toggle">
+<label for="sidebar-toggle" class="sidebar-toggle-label">Menu</label>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <h2>Netrex Menu</h2>
+  <a href="https://gpt.netrex.com" target="_blank">NetrexCEO GPT</a>
+  <a href="page1.html">Page 1</a>
+  <a href="page2.html">Page 2</a>
+  <a href="page3.html">Page 3</a>
+  <a href="page4.html">Page 4</a>
+  <a href="#">Project 1</a>
+  <a href="#">Project 2</a>
+  <a href="#">Project 3</a>
+  <a href="#">Product 1</a>
+  <a href="#">Product 2</a>
+  <a href="#">Product 3</a>
+  <a href="#">Contact</a>
+  <a href="#">About</a>
+  <a href="#">Blog</a>
+  <a href="#">Services</a>
+</div>
+
+<!-- Banner -->
+<header>
+  <img src="images/netrex-banner.png" alt="Netrex Banner">
+</header>
+
+<!-- Main Content -->
+<div class="main">
+  <h1>Welcome to Netrex</h1>
+  <p>This is Page 1 of your next-gen Netrex website. Explore, swipe the sidebar, and navigate through the pages.</p>
+  <div class="nav-buttons">
+    <span></span>
+    <a href="page2.html">Next →</a>
+  </div>
+</div>
+
+</body>
+</html>
